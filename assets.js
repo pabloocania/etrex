@@ -2,12 +2,12 @@ var express = require('express');
 var fs = require('fs');
 
 var router = express.Router();
-var content = fs.readFileSync('.hyperdev-assets', 'utf8');
+var content = fs.readFileSync('.glitch-assets', 'utf8');
 
 // Example url
 // https://cdn.gomix.com/us-east-1%3A1a0f89c8-26bf-4073-baed-2b409695e959%2Ffoobar.png
 
-// For some reason the .hyperdev-assets file is not parseable by JSON.parse :|
+// For some reason the .glitch-assets file is not parseable by JSON.parse :|
 router.get('/:name', function (request, response) {
   var name = '%2F' + request.params.name + '"';
   var index = content.indexOf(name);
