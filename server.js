@@ -9,7 +9,7 @@ var assets = require('./assets');
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
-// https://gomix.com/#!/project/assets-lib
+// https://glitch.com/#!/project/assets-lib
 app.use("/assets", assets);
 
 // handle 404s
