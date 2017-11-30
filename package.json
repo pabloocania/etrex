@@ -17,5 +17,6 @@
   },
   "keywords": [
     "node"
-  ]
+  ],
+  "license": "MIT"
 }
