@@ -11,21 +11,55 @@
         <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/etrex.css">
+        
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/ScrollMagic.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <!-- Add your site or application content here -->    
+        <div style="height: 100%; width: 100%">
+                <div id="particles-js" style='background-color: #1b242f; position: absolute;'>
+                        <div>
+                                <img src="assets/logo.png" class="etrex-logo">
+                        </div>
+                </div>
+                <div>
+                    <p class="text-output position-absolute">Text text text</p>
+                    <input class="text-output position-absolute" type="text" value="Un boton position-absolute">
+                </div> 
+        </div>
+        <section class="panel" style="background-color: red">
+            <b>First panel</b>
+        </section>
+        <section class="panel" style="background-color: blue">
+            <b>Second panel</b>
+        </section>
+            <section class="panel" style="background-color: green">
+            <b>Third panel</b>
+        </section>
+  
+        <div class="container-fluid">
+            <!--<p 
+            -->
+            
+        </div>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        
+       
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -36,5 +70,31 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
-    </body>
+        
+<script>
+    $(() => {
+        particlesJS.load('particles-js', 'assets/particles.json', function() {
+            console.log('callback - particles.js config loaded');
+            });
+        //Initialize Scroll Magic
+            var controller = new ScrollMagic.Controller({
+                globalSceneOptions: {
+                    triggerHook: "onLeave",
+                    offset: 100, // start scene after scrolling for 100px
+                }
+            });
+
+            var slides = $("section.panel");
+            
+            Array.prototype.forEach.call(slides, slide => {
+                var scene = new ScrollMagic.Scene({
+                    triggerElement : slide
+                    });
+                    scene.setPin(slide);
+                    scene.addTo(controller);
+                });
+            });
+</script>
+<script src="./js/vendor/particles.min.js"></script>
+</body>
 </html>
