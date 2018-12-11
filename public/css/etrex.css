@@ -48,11 +48,15 @@ html {
 }
 
 .etrex-logo {
-    width: 35%;
-    height: auto;
-    left: 20px;
-    position: absolute;
-    float: right;
-    margin-left: 57%;
-    margin-top: 5%;
+  width: 500px;
+  height: auto;
+  left: -250px;
+  position: absolute;
+  float: right;
+  margin-left: 50%;
+  margin-top: 5%;
+}
+
+.menu{
+  margin-top: 50%
 }

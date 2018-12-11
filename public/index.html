@@ -20,6 +20,9 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/vendor/ScrollMagic.min.js"></script>
+        <script src="js/vendor/animation.gsap.min.js"></script>
+        <script src="js/vendor/TimelineMax.min.js"></script>
+        <script src="js/vendor/TweenMax.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -29,38 +32,79 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="position-absolute container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <img src="assets/logo.png" class="etrex-logo">
+                                </div>
+                            </div>
+                            <div class="row menu">
+                                    <div class="col-sm-4">
+                                        <p class="text-output">eSports</p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p class="text-output">¿Qué ofrecemos?</p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p class="text-output">¿Quienes somos?</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!-- Add your site or application content here -->    
-        <div style="height: 100%; width: 100%">
-                <div id="particles-js" style='background-color: #1b242f; position: absolute;'>
+        <div id="particles-js" style="height: 100%; width: 100%; background-color: #1b242f;">
+                <!-- 
+                    <div class="row">
+                    <div class="col-xs-12">
+                        <img src="assets/logo.png" class="etrex-logo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <p class="text-output">eSports</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-output">¿Que ofrecemos?</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-output">Quienes somos</p>
+                    </div>
+                </div>
+                <div style='background-color: #1b242f; position: absolute;'>
                         <div>
-                                <img src="assets/logo.png" class="etrex-logo">
+                            
                         </div>
                 </div>
                 <div>
                     <p class="text-output position-absolute">Text text text</p>
                     <input class="text-output position-absolute" type="text" value="Un boton position-absolute">
-                </div> 
+                </div>  -->
         </div>
         <section class="panel" style="background-color: red">
-            <b>First panel</b>
+            <b id="panelText">First panel</b>
         </section>
         <section class="panel" style="background-color: blue">
             <b>Second panel</b>
+            <div class="container-fluid" id="triggerSecondPanel">
+                <div class="row">
+                    <div class="col-sm-6" id="textContent">
+                        <h1>SECOND ROW, FIRST ELEMENT MOVING FROM LEFT</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <h1>SECOND ROW, SECOND ELEMENT MOVING FROM RIGHT</h1>
+                    </div>
+                </div>
+            </div>
         </section>
             <section class="panel" style="background-color: green">
             <b>Third panel</b>
         </section>
   
-        <div class="container-fluid">
-            <!--<p 
-            -->
-            
-        </div>
-
-        
-       
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -76,24 +120,35 @@
         particlesJS.load('particles-js', 'assets/particles.json', function() {
             console.log('callback - particles.js config loaded');
             });
-        //Initialize Scroll Magic
-            var controller = new ScrollMagic.Controller({
-                globalSceneOptions: {
-                    triggerHook: "onLeave",
-                    offset: 100, // start scene after scrolling for 100px
-                }
-            });
+    });
 
-            var slides = $("section.panel");
+    //Initialize Scroll Magic
             
-            Array.prototype.forEach.call(slides, slide => {
-                var scene = new ScrollMagic.Scene({
-                    triggerElement : slide
-                    });
-                    scene.setPin(slide);
-                    scene.addTo(controller);
-                });
-            });
+    var controller = new ScrollMagic.Controller();
+    var slides = $("section.panel");
+    
+    for (let i = 0; i < slides.length; i++) {
+        const element = slides[i];
+        var scene = new ScrollMagic.Scene({
+            triggerHook: "onLeave",
+            triggerElement : element,
+        });
+        scene.setPin(element);
+        scene.addTo(controller);
+    }
+    
+    //var controllerAnimation = new ScrollMagic.Controller();
+            
+     var toAnimate = "#textContent";
+    
+     var animatedScene = new ScrollMagic.Scene({
+         triggerHook: "onCenter",
+         triggerElement: "#triggerSecondPanel"
+     });
+     var tween = TweenMax.to(toAnimate, 1, {x: 100});
+     animatedScene.setTween(tween);
+     animatedScene.addTo(controller);            
+        
 </script>
 <script src="./js/vendor/particles.min.js"></script>
 </body>
