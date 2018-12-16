@@ -31,64 +31,44 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="position-absolute container">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                        <img src="assets/logo.png" class="etrex-logo">
+        <section class="h-100">
+        <div id="particles-js" style="background-color: #000000;">
+                <div class="container-fluid position-absolute">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                                <img src="assets/logo.png" class="etrex-logo">
+                                        </div>
+                                    </div>
+                                    <div class="row menu">
+                                            <div class="col-sm-4">
+                                                <div class="flex">
+                                                        <a href="#0" class="bttn">eSports</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="flex">
+                                                        <a href="#0" class="bttn">Nuestros Servicios</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="flex">
+                                                        <a href="#0" class="bttn">Conocenos</a>
+                                                </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row menu">
-                                    <div class="col-sm-4">
-                                        <p class="text-output">eSports</p>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <p class="text-output">¿Qué ofrecemos?</p>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <p class="text-output">¿Quienes somos?</p>
-                                    </div>
-                                </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        <!-- Add your site or application content here -->    
-        <div id="particles-js" style="height: 100%; width: 100%; background-color: #1b242f;">
-                <!-- 
-                    <div class="row">
-                    <div class="col-xs-12">
-                        <img src="assets/logo.png" class="etrex-logo">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <p class="text-output">eSports</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p class="text-output">¿Que ofrecemos?</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p class="text-output">Quienes somos</p>
-                    </div>
-                </div>
-                <div style='background-color: #1b242f; position: absolute;'>
-                        <div>
-                            
-                        </div>
-                </div>
-                <div>
-                    <p class="text-output position-absolute">Text text text</p>
-                    <input class="text-output position-absolute" type="text" value="Un boton position-absolute">
-                </div>  -->
         </div>
-        <section class="panel" style="background-color: red">
+        </section>
+        <section class="panel firstPanel" style="background-color: white">
             <b id="panelText">First panel</b>
         </section>
-        <section class="panel" style="background-color: blue">
+        <section class="panel secondPanel">
             <b>Second panel</b>
             <div class="container-fluid" id="triggerSecondPanel">
                 <div class="row">
@@ -101,7 +81,7 @@
                 </div>
             </div>
         </section>
-            <section class="panel" style="background-color: green">
+            <section class="panel thirdPanel">
             <b>Third panel</b>
         </section>
   
@@ -117,7 +97,7 @@
         
 <script>
     $(() => {
-        particlesJS.load('particles-js', 'assets/particles.json', function() {
+        particlesJS.load('particles-js', 'assets/particles2.json', function() {
             console.log('callback - particles.js config loaded');
             });
     });

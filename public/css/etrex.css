@@ -1,62 +1,122 @@
-html {
-    height: 100%;
-  }
-  body {
-    min-height: 100%;
-  }
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
-  html,body{ 
-    width:100%;
-    height:100%;
-    background:#fff;
-    font-family: 'Roboto Mono', monospace !important;
-  }
-  
-  /* remove canvas default margin */
-  canvas{
-    display:block;
-  }
-  .panel{
-      height: 100%;
-      width:100%;
-  }
-  #particles-js{
-    width:100%;
-    height:100%;
-    background-position: 50% 50%; 
-  }
-  
-  
-  #loader{
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:200;
-    background:#111;
-    width:100%;
-    height:100%;
-  }
+body {
+  padding: 0px;
+  margin: 0;
+  font-family: "Roboto Mono", monospace !important;
+  background: #000000;
+  -webkit-font-smoothing: antialiased;
+}
 
-.text-output {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid white;
+canvas {
+  display: block;
+}
+
+.panel {
+  height: 100%;
+  width: 100%;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
 }
 
 .etrex-logo {
-  width: 500px;
+  width: 50%;
   height: auto;
-  left: -250px;
-  position: absolute;
-  float: right;
-  margin-left: 50%;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
-.menu{
-  margin-top: 50%
+.menu {
+  margin-top: 50px;
 }
+
+.flex {
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a.bttn {
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s ease all;
+}
+a.bttn:hover {
+  color: #000000;
+}
+a.bttn:focus {
+  color: #000000;
+}
+
+.firstPanel {
+  background-image: linear-gradient(to bottom, #000000, #333333, #555555, #777777, #aaaaaa, #cccccc, #ffffff);
+}
+
+.secondPanel {
+  background-color: #cccccc;
+}
+
+.thirdPanel {
+  background-color: #aaaaaa;
+}
+
+.bttn {
+  z-index: 1;
+  font-size: 16px;
+  letter-spacing: 2px;
+  display: inline-block;
+  text-align: center;
+  width: 270px;
+  font-weight: bold;
+  padding: 10px 0px;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+.bttn:before {
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #FFF;
+  z-index: -2;
+}
+.bttn:hover:before {
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  border-radius: 8px;
+}
+.bttn:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  border-radius: 8px;
+}
+
+/*# sourceMappingURL=etrex.css.map */
