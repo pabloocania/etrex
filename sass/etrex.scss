@@ -69,14 +69,20 @@ a.bttn {
 }
 
 .firstPanel{
-    background-image: linear-gradient(to bottom,$background, $sixth, $fifth,$forth, $third, $second, $first)
+    background-color: $first;
 }
+
 .secondPanel{
     background-color: $second;
 }
 
 .thirdPanel{
     background-color: $third;
+}
+
+.fixed-container {
+    height: 100%;
+    margin-top: -100%
 }
 
 .bttn {

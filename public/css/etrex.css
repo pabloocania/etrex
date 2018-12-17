@@ -65,7 +65,7 @@ a.bttn:focus {
 }
 
 .firstPanel {
-  background-image: linear-gradient(to bottom, #000000, #333333, #555555, #777777, #aaaaaa, #cccccc, #ffffff);
+  background-color: #ffffff;
 }
 
 .secondPanel {
@@ -74,6 +74,11 @@ a.bttn:focus {
 
 .thirdPanel {
   background-color: #aaaaaa;
+}
+
+.fixed-container {
+  height: 100%;
+  margin-top: -100%;
 }
 
 .bttn {

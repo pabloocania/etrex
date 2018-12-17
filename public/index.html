@@ -65,8 +65,25 @@
                     </div>
         </div>
         </section>
-        <section class="panel firstPanel" style="background-color: white">
-            <b id="panelText">First panel</b>
+        <section class="panel" style="background-color: white" id="firstPanel">
+                <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="col-sm-12">
+                                <p>CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" id="sectionHeader">
+                        <div class="row-fluid">
+                            <div class="col-sm-12">
+                                <h1>eSports</h1>
+                            </div>
+                        </div>
+                </div>    
         </section>
         <section class="panel secondPanel">
             <b>Second panel</b>
@@ -106,16 +123,17 @@
             
     var controller = new ScrollMagic.Controller();
     var slides = $("section.panel");
-    
-    for (let i = 0; i < slides.length; i++) {
-        const element = slides[i];
+
+    //for (let i = 0; i < slides.length; i++) {
+       // const element = slides[i];
         var scene = new ScrollMagic.Scene({
-            triggerHook: "onLeave",
-            triggerElement : element,
+            triggerHook: "onEnter",
+            triggerElement : "#firstPanel",
+            duration: "50%"
         });
-        scene.setPin(element);
+        scene.setPin("#sectionHeader");
         scene.addTo(controller);
-    }
+    //}
     
     //var controllerAnimation = new ScrollMagic.Controller();
             
