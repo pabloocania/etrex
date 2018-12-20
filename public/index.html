@@ -65,27 +65,22 @@
                     </div>
         </div>
         </section>
-        <section class="panel" style="background-color: white" id="firstPanel">
-                <div class="container-fluid">
-                        <div class="row-fluid">
-                            <div class="col-sm-12">
-                                <p>CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
-                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
-                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
-                                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid" id="sectionHeader">
-                        <div class="row-fluid">
-                            <div class="col-sm-12">
-                                <h1>eSports</h1>
-                            </div>
-                        </div>
-                </div>    
+        <section class="panel" style="background-color: white; height: 100vh; width: 100vw" id="firstPanel">
+            <div id=trigger1></div>
+            <div id="idHeader1" class="sectionHeader">
+                <h1>eSports</h1>
+            </div>
+            <div class="sectionContent">
+                <p>CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                        CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO CONTENIDO 
+                </p> 
+            </div>      
         </section>
+        <div id=trigger2></div>
         <section class="panel secondPanel">
+
             <b>Second panel</b>
             <div class="container-fluid" id="triggerSecondPanel">
                 <div class="row">
@@ -122,25 +117,19 @@
     //Initialize Scroll Magic
             
     var controller = new ScrollMagic.Controller();
-    var slides = $("section.panel");
-
-    //for (let i = 0; i < slides.length; i++) {
-       // const element = slides[i];
-        var scene = new ScrollMagic.Scene({
-            triggerHook: "onEnter",
-            triggerElement : "#firstPanel",
-            duration: "50%"
-        });
-        scene.setPin("#sectionHeader");
-        scene.addTo(controller);
-    //}
-    
+    console.log();
+    var scene = new ScrollMagic.Scene({triggerElement: "#trigger1",triggerHook: "onEnter", offset: 200, pushFollowers: false})
+                                    .setPin("#idHeader1")
+                                    .addTo(controller)
+                                    .on("start end", (e) => {
+                                        console.log("Event fired! (" + e.target+ ")");
+                                    });
     //var controllerAnimation = new ScrollMagic.Controller();
-            
-     var toAnimate = "#textContent";
+    scene.duration($("#firstPanel").height()); // supply duration method
+    scene.offset($("#idHeader1").height());
     
+     var toAnimate = "#textContent";    
      var animatedScene = new ScrollMagic.Scene({
-         triggerHook: "onCenter",
          triggerElement: "#triggerSecondPanel"
      });
      var tween = TweenMax.to(toAnimate, 1, {x: 100});
